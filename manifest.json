@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "Git Hub Find License",
+  "description": "This extension assists finding license information on GitHub",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "githubIcon.png",
+	"default_title": "Passively find License text on Github!"
+  },
+  "content_scripts": [
+	{
+  "matches": ["https://github.com/*"],
+  "js": ["jquery.js","highlightLicense.js"],
+  "css": ["highlight.css"]
+	}],
+  "permissions": [
+    "activeTab",
+    "https://github.com/*"
+  ]
+}
